@@ -1,0 +1,6 @@
+AMBIENTE DE DESENVOLVIMENTO:
+--> Instalara o Node.
+--> Instalar o Expo:
+    npm install --global expo-cli
+--> Criar um novo projeto:
+    expo init my-project
