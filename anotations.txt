@@ -1,6 +1,55 @@
+----------------------------------------------------------------------------
+
 AMBIENTE DE DESENVOLVIMENTO:
---> Instalara o Node.
+--> Instalar o Node.
 --> Instalar o Expo:
     npm install --global expo-cli
 --> Criar um novo projeto:
-    expo init my-project
+    expo init my-project OU expo init .
+--> O expo init . cria um projeto na pasta onde o comando é executado.
+
+--> Instalar o aplicativo Expo Client no celular.
+
+----------------------------------------------------------------------------
+
+DEPOIS DE DAR EXPO INIT:
+--> Vão aparecer algumas opções, basta clicar na que eu quiser.
+Exemplo: A opção com 'blank (TypeScript)  same as blank but with TypeScript configuration'.
+--> A estrutura do React Native vai ser baixada e ficará pronta para o projeto.
+
+----------------------------------------------------------------------------
+
+PARA RODAR O PROJETO:
+--> Basta rodar o código:
+    expo start
+
+----------------------------------------------------------------------------
+
+O QUE É REACT NATIVE:
+--> É um framework de criação de aplicações nativas mobile.
+--> Projeto Open Sourcee mantido pelo Facebook desde 2015, multiplataforma, podendo manipular cada plataforma de forma diferente.
+
+CARACTERÍSTICAS DO REACT NATIVE:
+--> Fast Refresh que dá um feedback quase instantâneo das alterações.
+--> Tem uma base de código para as plataformas iOS e Android.
+--> Usa Javascript, uma linguagem muito popular.
+--> Tem uma comunidade ativa com inúmeras bibliotecas e UI frameworks.
+
+----------------------------------------------------------------------------
+
+PORQUE USAR O REACT NATIVE:
+--> Ele serve para o desenvolvimento multiplataforma, tanto para Android quanto para IOS de uma vez só.
+--> Basta apenas codar um único code base em Javascript, e o React Native usa um Metro Bundler que gera um pacote. Esse pacote usa o JS Core para fazer com que tanto o Android quanto o IOS entendam o código escrito em Javascript.
+--> Dessa forma, no React Native, é possível a renderização de elementos em um ambiente nativo em cada plataforma.
+--> Cada elemento é feito por meio de tags, como HTML, sendo que no IOS eles são renderizados com o elemento que o IOS utiliza, e no Android eles são renderizados com o elemento que o Android nativamente utiliza.
+--> Dessa forma, tem-se uma code base que mostra o mesmo aplicativo tanto para Android quanto para IOS, só que nativamente.
+
+----------------------------------------------------------------------------
+
+PORQUE USAR O EXPO:
+--> Para visualizar o aplicativo sendo desenvolvido.
+--> Sem o expo, seria necessário instalar um ambiente de desenvolvimento para o IOS e um para o Android, o dobro do trabalho que daria se for usado o expo.
+--> Com o expo, praticamente se pula a etapa de configurar o ambiente de desenvolvimento e os emuladores para cada plataforma.
+--> O expo possui um recurso chamado App Expo Client, que faz a função do emulador, e permite que seja rodado o app direto no celular.
+
+----------------------------------------------------------------------------
