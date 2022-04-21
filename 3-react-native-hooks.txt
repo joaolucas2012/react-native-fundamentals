@@ -1,4 +1,55 @@
 --------------------------------------------------------------------------------
 
+COMO ADICIONAR COMPONENTES AO REACT NATIVE:
+--> Basta seguir quase o mesmo padrão usado no React JS.
+--> É só pegar uma parte do código que pode ser reutilizável, criar uma pasta components dentro da pasta src e colocar o seguinte código na sintaxe abaixo:
+
+import React from "react";
+import { coisasNecessarias } from "react-native";
+
+export function Componente(){
+   return(
+      código aqui
+   )
+}
+
+--> Depois, basta ir em algum return de uma página e chamar o componente criado por meio de uma tag personalizada.
+--> Importar o componente antes de chama-lo.
 
 --------------------------------------------------------------------------------
+
+COMO PASSAR PROPRIEDADES TIPADAS PARA UM COMPONENTE:
+--> Basta criar um objeto tipado com Typescript antes da função do componente, especificando o tipo de dados que a propriedade precisa receber para o componente ser exibido em tela.
+--> Para isso, basta escrever 'interface' e o nome da propriedade do componente e depois passar entre {} o valor que precisa ser recebido.
+
+interface ButtonProps {
+    title: string;
+}
+
+--> Depois, na função do componente, basta colocar como parâmetro o objeto tipado com o nome da propriedade entre {} e completar com ': nomeDaPropriedade'.
+--> E então, no return, basta colocar o nome da propriedade entre chaves.
+
+export function Button({ title } : ButtonProps){
+    return(
+        <TouchableOpacity>
+            <Text>
+                { title }
+            </Text>
+        </TouchableOpacity>
+    );
+};
+
+--> Depois, dentro do return de alguma página, basta chamar o componente e passar a propriedade a ele no mesmo tipo exigido pelo typescript.
+
+<Button title={ "Avançar" }/>
+
+--------------------------------------------------------------------------------
+export function Button({ title } : ButtonProps){
+    return(
+        <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+            <Text style={styles.buttonText}>
+                { title }
+            </Text>
+        </TouchableOpacity>
+    );
+};
