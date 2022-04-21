@@ -120,3 +120,26 @@ PARA ANDROID:
 --> O 100 é o padding que é aplicado ao topo caso o ambiente de desenvolvimento seja no Android.
 
 ----------------------------------------------------------------
+
+ORGANIZAÇÃO DE CORES NO REACT NATIVE:
+--> Basta criar uma pasta 'styles' dentro da pasta 'src'.
+--> Depois criar um arquivo 'colors.ts' dentro da pasta styles.
+--> Nesse arquivo, basta organizar as cores dessa forma:
+
+export default {
+  green: '#32B768',
+  green_dark: '#2B7A4B',
+  green_light: '#DAF2E4',
+};
+
+----------------------------------------------------------------
+
+PARA PULAR LINHAS NO TEXTO:
+--> Basta escrever {'\n'} entre uma palavra e outra pra dar quebra de texto.
+
+PARA MUDAR A OPACIDADE DO BOTÃO AO SER CLICADO:
+--> Basta adicionar a propriedade activeOpacity e atribuir algum valor para a opacidade do botão no momento em que ele é clicado.
+
+    <TouchableOpacity activeOpacity={0.7}>Texto</TouchableOpacity>
+
+----------------------------------------------------------------
