@@ -108,3 +108,15 @@ ADICIONAR BOTÃO NO REACT NATIVE - TOUCHABLEOPACITY:
       </TouchableOpacity>
 
 ----------------------------------------------------------------
+
+AJUSTAR ESTILO PRA NÃO ESCONDER ELEMENTOS ATRÁS DE DETALHES DO CELULAR:
+PARA IOS:
+--> É preciso importar o SafeAreaView da biblioteca 'react-native'.
+
+PARA ANDROID:
+--> Importar o Platform da biblioteca 'react-native'.
+--> No objeto styles, adicionar:
+    paddingTop: Platform.OS === 'android' ? 100 : 0
+--> O 100 é o padding que é aplicado ao topo caso o ambiente de desenvolvimento seja no Android.
+
+----------------------------------------------------------------
