@@ -55,5 +55,15 @@ COMO CRIAR NOVAS PÁGINAS NO REACT NATIVE:
 --> Para criar uma, basta criar uma pasta chamada 'src', e uma pasta 'pages' dentro dela.
 --> Então, basta criar um arquivo tsx (em typescript) dentro da pasta 'src/pages'. Esse arquivo será uma nova página que conterá algo como um novo componente que poderá ser mostrado em alguma parte do app. 
 
+OBSERVAÇÕES:
+--> Ao criar uma página, é preciso usar a sintaxe "export function nomedafunction(){}".
+--> Já no App, é obrigatório usar "export default function App(){}".
+--> Isso porque o App tem que ser mostrado por padrão no aplicativo, e as páginas são carregadas depois.
+
 ----------------------------------------------------------------
 
+RENDERIZAR NOVAS PÁGINAS NO REACT NATIVE:
+--> Basta ir no App e chamar a página em formato de tag personalizada, semelhante aos componentes em React Js.
+--> É preciso importar essa página antes de usa-la.
+
+----------------------------------------------------------------
