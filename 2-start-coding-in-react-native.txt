@@ -1,0 +1,59 @@
+----------------------------------------------------------------
+
+COMEÇANDO COM O CÓDIGO:
+--> Primeiro é preciso importar o "React from 'react';".
+--> Depois é preciso importar os elementos que vão ser usados no App.
+    import React from "react";
+    import { Text, View } from "react-native";
+
+--> O Text é um elemento de texto (como o <p> no HTML) e a View é uma caixa que pode guardar coisas dentro (como a <div> no HTML).
+--> Depois, basta exportar uma função que retorna um código jsx, semelhante ao React:
+
+    export default function App(){
+        return(
+            <View>
+                <Text>Meu texto</Text>
+            </View>
+        )
+
+    }
+
+----------------------------------------------------------------
+
+DAR ESTILO A UMA TAG:
+--> Basta adicionar uma proriedade 'style' à tag e passar um ojeto com estilos para essa propriedade aplicar ao elemento.
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+
+--> O flexbox já está presente por default no React Native.
+
+
+MELHOR FORMA DE ARMAZENAR OS ESTILOS:
+--> Importar o "StyleSheet" da bibioteca "react-native";
+--> Criar um objeto chamado style e colocar dentro dele os estilos usados:
+
+    const style = StyleSheet.create({
+        container: {
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+        },
+    });
+
+--> Passar o objeto style como valor para a propriedade 'style' de algum elemento:
+    <View style={style.container}></View>
+
+----------------------------------------------------------------
+
+A PASTA ASSETS:
+--> Essa pasta armazena os ícones que são mostrados na tela de splash do aplicativo.
+--> A tela de splash é a tela de descanso que aparece antes de carregar todos os componentes visuais da tela inicial do app.
+
+----------------------------------------------------------------
+
+COMO CRIAR NOVAS PÁGINAS NO REACT NATIVE:
+--> As páginas são parecidas como novos componentes no React Js.
+--> Para criar uma, basta criar uma pasta chamada 'src', e uma pasta 'pages' dentro dela.
+--> Então, basta criar um arquivo tsx (em typescript) dentro da pasta 'src/pages'. Esse arquivo será uma nova página que conterá algo como um novo componente que poderá ser mostrado em alguma parte do app. 
+
+----------------------------------------------------------------
+
