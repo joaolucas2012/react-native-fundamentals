@@ -67,3 +67,30 @@ RENDERIZAR NOVAS PÁGINAS NO REACT NATIVE:
 --> É preciso importar essa página antes de usa-la.
 
 ----------------------------------------------------------------
+
+COMO RECONHECER IMAGENS NA HORA DA IMPORTAÇÃO E RENDERIZAÇÃO:
+--> Basta criar um arquivo na pasta raiz chamado 'custom.d.ts'.
+--> Ele serve para sobrescrever o nome de arquivos de imagem para que o react native reconheça essas imagens na hora de renderiza-las.
+--> Dentro desse arquivo, basta colocar:
+
+    declare module "*.png" {
+        const content: any;
+        export default content;
+    }
+
+--> Depois, basta ir no App e importar Image da biblioteca 'react-native';
+--> Importar também a imagem png que será usada.
+    
+    import { View, Text, Image, StyleSheet } from "react-native";
+
+    import wateringImg from "../assets/watering.png";
+
+    export function Welcome() {
+      return (
+        <View style={styles.container}>
+          <Image source={wateringImg} />
+        </View>
+      );
+    }
+
+----------------------------------------------------------------
