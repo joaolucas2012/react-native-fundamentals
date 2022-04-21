@@ -22,6 +22,8 @@ Exemplo: A opção com 'blank (TypeScript)  same as blank but with TypeScript co
 PARA RODAR O PROJETO:
 --> Basta rodar o código:
     expo start
+--> Pressionar a tecla 'd' para abrir o localhost:19002.
+--> Entrar no app Expo e escanear o QR da tela para visualizar o aplicativo sendo desenvolvido.
 
 ----------------------------------------------------------------------------
 
