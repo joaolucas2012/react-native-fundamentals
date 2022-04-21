@@ -94,3 +94,17 @@ COMO RECONHECER IMAGENS NA HORA DA IMPORTAÇÃO E RENDERIZAÇÃO:
     }
 
 ----------------------------------------------------------------
+
+ADICIONAR BOTÃO NO REACT NATIVE - TOUCHABLEOPACITY:
+--> O elemento TouchableOpacity serve para criar botões no React Native.
+--> Ele cria um efeito de opacidade ao ser pressionado, como um botão.
+--> É preciso importar ele da biblioteca 'react-native' e daí renderiza-lo como uma tag especial.
+--> Dentro da tag <TouchableOpacity> dá pra adicionar uma tag <Text> para colocar o texto do botão.
+
+      <TouchableOpacity>
+        <Text>
+          Clique aqui
+        </Text>
+      </TouchableOpacity>
+
+----------------------------------------------------------------
