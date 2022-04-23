@@ -64,3 +64,34 @@ ESTADOS NO REACT-NATIVE:
 const [estado, setEstado] = useState('');
 
 --------------------------------------------------------------------------------
+
+COMO PASSAR PROPRIEDADES PARA UM BOTÃO NO REACT NATIVE:
+--> Basta importar o TouchableOpacityProps da biblioteca 'react-native'.
+--> Depois, na tipagem do Typescript para o botão, basta escrever extends TouchableOpacityProps na frente:
+
+interface ButtonProps extends TouchableOpacityProps {
+    title: string;
+}
+
+--> Depois, na função do componente botão, basta colocar como parâmetro um ...rest na frente da propriedade que já estava sendo exigida antes pelo Typescript, que eu mesmo tinha criado.
+--> Exemplo:
+
+export function Button({ title, ...rest } : ButtonProps){}
+
+--> O rest serve para puxar todas as outras propriedades do TouchableOpacity que se aplicam ao botão, usando o spread operator. Com isso, pode-se usar outras propriedades além do title, como o onPress, por exemplo, que vem junto com o TouchableOpacityProps.
+--> Após isso, basta colocar o {... rest} como uma propriedade na hora da renderização de um TouchableOpacity, dentro do componente botão. Exemplo:
+
+    return(
+        <TouchableOpacity style={styles.button} activeOpacity={0.7} {...rest}>
+            <Text style={styles.buttonText}>
+                { title }
+            </Text>
+        </TouchableOpacity>
+    );
+
+--> Aqui, onde o rest está permite que sejam adicionadas outras propriedades na hora da renderização do componente botão em alguma page.
+--> Com tudo isso, basta apenas ir numa page e importar o useState da biblioteca 'react' e usar normalmente antes do return, como no React Js.
+--> Depois que eu criar alguma função handler que manipule e atualize o estado do componente com o useState, basta apenas adicionar uma propriedade 'onPress' no botão renderizado, e dentro de chaves passar o nome da função handler.
+--> Assim, toda vez que o botão for clicado, uma função handler será chamada e o useState atualizará o estado de algum componente na tela, sob alguma lógica.
+ 
+--------------------------------------------------------------------------------
