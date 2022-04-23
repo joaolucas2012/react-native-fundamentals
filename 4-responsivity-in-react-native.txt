@@ -1,0 +1,21 @@
+---------------------------------------------------------------------------------
+
+RESPONSIVIDADE NO REACT NATIVE:
+--> Trabalhar com width e height numa imagem no front-end é uma má prática para a responsividade.
+--> Por isso, é melhor importar o Dimensions da biblioteca 'react-native'.
+--> Depois, no estilo da imagem, basta adicionar só um 
+    height: Dimensions.get('window').width * 0.7
+
+--> Aqui, o Dimensions pega todo o tamanho da janela atual (get('window')) e reduz o width para 70% da tela (width * 0.7).
+--> O valor que multiplica o width define a porcentagem que desejamos que a imagem ocupe de largura na tela, enquanto a altura da imagem só irá se adaptar à proporção da largura.
+
+--> Para fazer funcionar, é preciso só ir na tag <image/> e adicionar a proriedade resizeMode="contain". Exemplo:
+    <Image 
+        source={wateringImg} 
+        style={styles.image}
+        resizeMode="contain"
+     />  
+
+--> Agora a imagem se adapta ao tamanho da tela com responsividade.  
+
+---------------------------------------------------------------------------------
