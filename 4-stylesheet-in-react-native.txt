@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------------
+
+RESPONSIVIDADE NO REACT NATIVE:
+--> Trabalhar com width e height numa imagem no front-end é uma má prática para a responsividade.
+--> Por isso, é melhor importar o Dimensions da biblioteca 'react-native'.
+--> Depois, no estilo da imagem, basta adicionar só um 
+    height: Dimensions.get('window').width * 0.7
+
+--> Aqui, o Dimensions pega todo o tamanho da janela atual (get('window')) e reduz o width para 70% da tela (width * 0.7).
+--> O valor que multiplica o width define a porcentagem que desejamos que a imagem ocupe de largura na tela, enquanto a altura da imagem só irá se adaptar à proporção da largura.
+
+--> Para fazer funcionar, é preciso só ir na tag <image/> e adicionar a proriedade resizeMode="contain". Exemplo:
+    <Image 
+        source={wateringImg} 
+        style={styles.image}
+        resizeMode="contain"
+     />  
+
+--> Agora a imagem se adapta ao tamanho da tela com responsividade.  
+
+---------------------------------------------------------------------------------
+
+COMO USAR ÍCONES NO REACT NATIVE:
+--> Basta instalar uma api do Expo para lidar com ícones.
+--> É só ir no terminal e rodar:
+    expo install @expo/vector-icons
+--> Depois, basta ir no site do react native vector icons e pegar o ícone que eu quiser usar.
+Link: https://oblador.github.io/react-native-vector-icons/
+
+--> É só escolher um nome de família de ícones e escolher um ícone que eu queira usar.
+--> Depois, basta importar o nome da família de ícones da biblioteca '@expo/vector-icons'. Exemplo:
+
+    import { Entypo } from '@expo/vector-icons';
+
+--> Daí, basta ir dentro da tag TouchableOpacity, por exemplo, e colocar uma tag com o mesmo nome da família de ícones importada e adicionar uma propriedade name='nome-do-ícone-escolhido'. Exemplo:
+
+    <Entypo name="bucket"/>
+
+--> Pronto, o ícone será exibido e é possível inclusive adicionar estilos a esse ícone com a propriedade style.
+
+---------------------------------------------------------------------------------
+    
