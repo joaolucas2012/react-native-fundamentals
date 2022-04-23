@@ -53,3 +53,14 @@ export function Button({ title } : ButtonProps){
         </TouchableOpacity>
     );
 };
+
+--------------------------------------------------------------------------------
+
+ESTADOS NO REACT-NATIVE:
+--> É o mesmo que os estados no React Js, usando o hook useState.
+--> O useState retorna um vetor de dois valores, sendo que o primeiro valor é uma variável que representa e armazena o estado atual do componente, e o segundo valor é uma função que serve para atualizar o estado atual do componente.
+--> É a mesma sintaxe e notação do React Js.
+
+const [estado, setEstado] = useState('');
+
+--------------------------------------------------------------------------------
