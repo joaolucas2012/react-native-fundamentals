@@ -95,3 +95,15 @@ export function Button({ title, ...rest } : ButtonProps){}
 --> Assim, toda vez que o botão for clicado, uma função handler será chamada e o useState atualizará o estado de algum componente na tela, sob alguma lógica.
  
 --------------------------------------------------------------------------------
+
+USANDO O EXPO GOOGLE FONTS:
+--> O Expo Google fonts é um repositório de fontes gratuitas que podem ser usadas em qualquer projeto.
+Link: https://docs.expo.dev/guides/using-custom-fonts/
+--> Para instalar isso no projeto, basta rodar no terminal:
+     
+expo install expo-font @expo-google-fonts/nome-da-fonte
+
+--> O nome da fonte pode ser qualquer um que esteja no repositório de fontes do Expo Google Fonts.
+--> Para importar essa fonte para usar no código, basta ir no arquivo App.tsx e importar o hook chamado useFonts.
+
+--------------------------------------------------------------------------------

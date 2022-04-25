@@ -39,4 +39,3 @@ Link: https://oblador.github.io/react-native-vector-icons/
 --> Pronto, o ícone será exibido e é possível inclusive adicionar estilos a esse ícone com a propriedade style.
 
 ---------------------------------------------------------------------------------
-    
