@@ -107,3 +107,51 @@ expo install expo-font @expo-google-fonts/nome-da-fonte
 --> Para importar essa fonte para usar no código, basta ir no arquivo App.tsx e importar o hook chamado useFonts.
 
 --------------------------------------------------------------------------------
+
+IMPORTANDO O USEFONTS:
+    
+import { useFonts, Jost_400Regular } from '@expo-google-fonts/jost';
+  
+--> Primeiro importamos o useFonts e depois as diferentes versões da fonte escolhida, que nesse caso foi a fonte Jost, com a variação chamada "Jost_400Regular".
+--> Depois, basta ir na função do App e, antes do return, digitar:
+
+const [ fontsLoaded ] = useFonts({
+    Jost_400Regular,
+    Josto_600SemiBold
+});
+
+--> O useFonts é um hook que retorna um vetor com dois valores, sendo que o primeiro valor é um boolean que pode ser verdadeiro ou falso e o segundo valor é um "erro" ou "nulo".
+--> O "fontsLoaded" serve pra confirmar se as fontes já foram carregadas ou não. Com isso, é possível fazer operações de lógica pra saber se as fontes já podem ser usadas.
+
+--------------------------------------------------------------------------------
+
+COMO USAR O APP LOADING:
+
+--> Enquanto as fontes são carregadas, é necessário "segurar" a tela de splash até o processo ser concluído.
+--> Para fazer isso, basta ir no terminal e rodar:
+
+expo install expo-app-loading
+
+--> O expo-app-loading serve para atrasar a tela de splash até as fontes serem carregadas no app.
+--> Para usa-lo no código, basta importar o AppLoading da biblioteca "expo-app-loading":
+
+import AppLoading from "expo-app-loading";
+
+--> Após isso, basta ir depois da chamada do useFonts e colocar uma condição para fazer o expo-app-loading atrasar a tela de splash caso as fontes ainda não tenham sido carregadas:
+
+export default function App() {
+  const [fontsLoaded] = useFonts({
+    Jost_400Regular,
+    Jost_600SemiBold
+  });
+
+  if(!fontsLoaded) return (
+    <AppLoading/>
+  );
+
+  return (
+    <Welcome />
+  );
+}
+
+--------------------------------------------------------------------------------
