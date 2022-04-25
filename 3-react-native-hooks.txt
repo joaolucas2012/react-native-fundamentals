@@ -155,3 +155,25 @@ export default function App() {
 }
 
 --------------------------------------------------------------------------------
+
+COMO APLICAR AS FONTES:
+--> Basta ir na pasta 'styles' e adicionar um arquivo chamado fonts.ts.
+--> Dentro do arquivo, é pra criar uma lista de fontes com as fontes desejadas, seguindo essa sintaxe:
+
+export default {
+    heading: 'Jost_600SemiBold',
+    text: 'Jost_400Regular',
+    complement: 'Jost_400Regular'
+};
+
+--> Os nomes das propriedades (heading, text, complement) são opcionais, poderiam ser quaisquer outros nomes, dependendo do design do Figma e das especificações.
+
+--> Após isso, basta ir na página desejada, ir nos estilos de algum texto e aplicar um 'fontFamily: fonts.nomeDaFonte'. Exemplo:
+
+title: {
+    fontSize: 32,
+    fontFamily: fonts.heading,
+    textAlign: "center",
+  }
+
+--------------------------------------------------------------------------------
