@@ -75,3 +75,41 @@ COMO SUAVIZAR A SUBIDA DO TECLADO COM O CONTEÚDO:
 --> Aqui, nessa lógica, se o ambiente for o iOS, será aplicado um comportamento de padding no conteúdo da tela, e se o ambiente for Android, será aplicado um comportamento de height.
 
 ---------------------------------------------------------------------------------
+
+COMO MUDAR A COR DA LINHA DO CAMPO DE INPUT QUANDO ELE ESTIVER EM FOCO:
+--> Tem que importar o useState da biblioteca 'react-native'.
+--> Depois, antes do return(), chamar o useState:
+    const [isFocused, setIsFocused] = useState(false); 
+--> Depois, basta criar duas funções (handleInputBlur e handleInputFocus).
+
+    const handleInputBlur = () => {
+        setIsFocused(false);
+    }
+
+    const handleInputFocus = () => {
+        setIsFocused(true);
+    }
+
+--> Após isso, tem que ir na propriedade 'style' do input e passar um vetor como valor a ela, e esse vetor tem que conter o estilo do StyleSheet e mais uma condição extra que altera o estilo da borda do input, caso ele esteja em foco.
+    <TextInput 
+       style={[
+          styles.input,
+          isFocused && { borderColor: colors.green }
+       ]}
+    />
+
+--> Aqui, o && retorna o primeiro valor, se ele for falso, ou retorna o último valor verdadeiro, se todos os valores forem verdadeiros. Então, caso o isFocused seja verdadeiro, o && retorna o estilo, caso contrário, o && retorna o false, e nada acontece.
+
+--> Depois disso, basta criar mais duas propriedades no input e adicionar as funções handler para elas como valor:
+    <TextInput 
+        style={[
+            styles.input,
+            isFocused && { borderColor: colors.green }
+        ]}
+        onBlur={ handleInputBlur }
+        onFocus={ handleInputFocus }
+    />
+   
+--> Agora, toda vez que o usuário der foco no input, essas funções serão chamadas, e a condição do style irá usar o valor do isFocused para alterar o estilo do input quando o mesmo estiver em foco.
+
+---------------------------------------------------------------------------------
