@@ -113,3 +113,17 @@ COMO MUDAR A COR DA LINHA DO CAMPO DE INPUT QUANDO ELE ESTIVER EM FOCO:
 --> Agora, toda vez que o usuário der foco no input, essas funções serão chamadas, e a condição do style irá usar o valor do isFocused para alterar o estilo do input quando o mesmo estiver em foco.
 
 ---------------------------------------------------------------------------------
+
+COMO FAZER O INPUT CONTINUAR COLORIDO DEPOIS DE PREENCHIDO:
+--> Criar um novo estado com o useState:
+    const [isFilled, setIsFilled] = useState(false);
+
+--> Criar uma nova função handler para tratar o input preenchido:
+    const handleInputChange = (value: string) => {
+        setIsFilled(!!value);
+    }
+
+--> Aqui, o operador !! serve para transformar o valor recebido em booleano (caso não tiver conteúdo vai ser falso, caso tiver conteúdo, vai ser verdadeiro).
+--> Depois, ir na tag do input e adicionar a propriedade "onChangeText={ handleInputChange }".
+
+---------------------------------------------------------------------------------
