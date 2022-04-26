@@ -65,6 +65,14 @@ const [estado, setEstado] = useState('');
 
 --------------------------------------------------------------------------------
 
+COMO DEFINIR O TIPO DE VALOR QUE DEVE SER RECEBIDO POR UM STATE:
+--> Basta definir o state da seguinte forma:
+    const [name, setName] = useState<string>();
+--> Aqui, o Typescript entende que ele precisa ler no useState um valor que precisa ser uma string.
+--> No useFonts e em outros hooks que recebem valores padrão, não é necessário fazer essa tipagem.
+
+--------------------------------------------------------------------------------
+
 COMO PASSAR PROPRIEDADES PARA UM BOTÃO NO REACT NATIVE:
 --> Basta importar o TouchableOpacityProps da biblioteca 'react-native'.
 --> Depois, na tipagem do Typescript para o botão, basta escrever extends TouchableOpacityProps na frente:
