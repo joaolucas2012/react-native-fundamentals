@@ -39,3 +39,31 @@ Link: https://oblador.github.io/react-native-vector-icons/
 --> Pronto, o ícone será exibido e é possível inclusive adicionar estilos a esse ícone com a propriedade style.
 
 ---------------------------------------------------------------------------------
+
+COMO NÃO ESCONDER O BOTÃO NA TELA QUANDO O USUÁRIO ESTIVER DIGITANDO:
+
+--> É preciso importar o KeyboardAvoidingView da biblioteca 'react-native'.
+--> Depois, basta usar a tag <KeyboardAvoidingView> dentro da tag <SafeAreaView>.
+--> O KeyboardAvoidingView deve envolver todo o conteúdo entre sua tag, e depois, basta aplicar à ele o mesmo estilo aplicado ao container do SafeAreaView. Exemplo:
+
+         <SafeAreaView style={styles.container}>
+            <KeyboardAvoidingView style={styles.container}>
+                <View style={styles.wrapper}>
+                    <View style={styles.form}>
+                        <Text style={styles.title}>
+                            Como podemos {"\n"}
+                            chamar você?
+                        </Text>
+                        <TextInput 
+                            style={styles.input}
+                            placeholder="Digite um nome"
+                        />
+                        <View style={styles.footer}>
+                            <Button title="Confirmar" />
+                        </View>
+                    </View>
+                </View>
+            </KeyboardAvoidingView>
+        </SafeAreaView>
+
+---------------------------------------------------------------------------------
