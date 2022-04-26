@@ -67,3 +67,11 @@ COMO NÃO ESCONDER O BOTÃO NA TELA QUANDO O USUÁRIO ESTIVER DIGITANDO:
         </SafeAreaView>
 
 ---------------------------------------------------------------------------------
+
+COMO SUAVIZAR A SUBIDA DO TECLADO COM O CONTEÚDO:
+--> Importar o Platform da biblioteca 'react-native'.
+--> Basta aplicar uma propriedade ao KeyboardAvoidingView: 
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+--> Aqui, nessa lógica, se o ambiente for o iOS, será aplicado um comportamento de padding no conteúdo da tela, e se o ambiente for Android, será aplicado um comportamento de height.
+
+---------------------------------------------------------------------------------
