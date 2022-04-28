@@ -79,3 +79,30 @@ export default AppRoutes;
 --> O navegador vai abrir primeiro a tela que estiver sempre em cima, ou seja, a ordem de navegação de cima para baixo.
 
 ----------------------------------------------------------------------------------------
+
+COMO CRIAR UM CONTAINER DE NAVEGAÇÃO (INDEX.TSX):
+--> Basta ir na pasta 'routes' e adicionar um arquivo 'index.tsx'.
+--> Tem que importar o react do 'react'.
+--> Tem que importar o NavigationContainer da biblioteca '@react-navigation/native'.
+--> Depois importar a stack routes recém-criada.
+--> Criar a função das routes e dentro do return é pra colocar a <stackRoutes/> envolvida pela tag <NavigationContainer></NavigationContainer>.
+--> Assim é o código exemplo:
+
+-------------------------------------------------------------------
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
+import StackRoutes from "./stack.routes";
+
+const Routes = () => (
+    <NavigationContainer>
+        <StackRoutes />
+    </NavigationContainer>
+);
+
+export default Routes;
+-------------------------------------------------------------------
+
+--> Assim, como esse container de navegação é exportado como um componente, é possível ir no App.tsx e importar ele e enfim renderiza-lo juntamente com sua própria pilha de navegação.
+
+----------------------------------------------------------------------------------------
