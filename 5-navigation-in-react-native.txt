@@ -106,3 +106,12 @@ export default Routes;
 --> Assim, como esse container de navegação é exportado como um componente, é possível ir no App.tsx e importar ele e enfim renderiza-lo juntamente com sua própria pilha de navegação.
 
 ----------------------------------------------------------------------------------------
+
+COMO RENDERIZAR O CONTAINER DE NAVEGAÇÃO NO APP.TSX.
+--> Basta ir no App.tsx e importar o 'index.tsx' da pasta 'routes'.
+import Routes from "./src/routes";
+
+--> Basta apenas colocar from "./src/routes", pois se não colocar o nome do arquivo, o React Native vai procurar por padrão algum arquivo com o nome 'index', e aí ele vai encontrar o 'index.tsx'.
+--> Depois disso, basta renderizar o <Routes /> no return da função do App.
+
+----------------------------------------------------------------------------------------
