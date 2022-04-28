@@ -30,3 +30,52 @@ yarn add @react-navigation/native-stack
 --> Importar o { createStackNavigator } do '@react-navigation/native-stack'.
 
 ----------------------------------------------------------------------------------------
+
+COMO CRIAR O STACK ROUTES:
+--> Basta ir na pasta 'stack.routes.tsx' recém criada e adicionar a função do AppRoutes, que pode ter qualquer outro nome também:
+
+-------------------------------------------------------------------
+import React from 'react';
+import { 
+    createNativeStackNavigator 
+} from '@react-navigation/native-stack';
+
+import { Welcome } from '../pages/Welcome';
+import { UserIdentification } from '../pages/UserIdentification';
+import { Confirmation } from '../pages/Confirmation';
+
+const stackRoutes = createNativeStackNavigator();
+
+const AppRoutes: React.FC = () => (
+    <stackRoutes.Navigator
+        screenOptions={{
+            headerShown: false,
+        }}
+    >
+        <stackRoutes.Screen 
+            name="Welcome"
+            component={Welcome}
+        />
+        <stackRoutes.Screen 
+            name="UserIdentification"
+            component={UserIdentification}
+        />
+        <stackRoutes.Screen 
+            name="Confirmation"
+            component={Confirmation}
+        />
+    </stackRoutes.Navigator>
+);
+
+export default AppRoutes;
+-------------------------------------------------------------------
+
+--> O const AppRoutes: React.FC = () => (); serve para tipar o AppRoutes como um functional component (FC).
+--> O stackRoutes.Navigator define a pilha de navegação das páginas.
+--> O stackRoutes.Navigator possui a propriedade screenOptions= {{headerShow: false}} para esconder o cabeçalho com o nome da página na hora de chamar alguma página.
+--> A tag <stackRoutes.Screen/> tem as propriedades 'name' e 'component', que servem para identificar e mostrar as páginas de diferentes nomes que devem ser mostradas.
+--> A ordem em que essas stackRoutes aparecem é a ordem que as páginas devem ser mostradas de acordo como são empilhadas na stack. 
+--> Por isso, é preciso importar nesse arquivo também as páginas que serão usadas e renderizadas.
+--> O navegador vai abrir primeiro a tela que estiver sempre em cima, ou seja, a ordem de navegação de cima para baixo.
+
+----------------------------------------------------------------------------------------
