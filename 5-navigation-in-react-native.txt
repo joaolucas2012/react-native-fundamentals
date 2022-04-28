@@ -1,0 +1,32 @@
+----------------------------------------------------------------------------------------
+
+COMO INSTALAR O AMBIENTE DE NAVEGAÇÃO NO REACT NATIVE:
+--> Basta instalar o React Navigation com os comando abaixo:
+
+COM NPM:
+npm install @react-navigation/native
+
+COM YARN:
+yarn add @react-navigation/native
+
+
+--> Depois, tem que instalar alguns pacotes adicionais para cada ambiente lidar com a navegação de forma diferente. Basta rodar este comando:
+
+expo install react-native-screens react-native-safe-area-context
+
+
+--> Após isso, tem que instalar o react navigation stack, para lidar com a pilha de navegação do app:
+
+COM NPM:
+npm install @react-navigation/native-stack
+
+COM YARN:
+yarn add @react-navigation/native-stack
+
+
+--> Criar uma pasta 'routes' dentro da pasta 'src'.
+--> Criar um arquivo 'stack.routes.tsx' dentro da pasta 'routes'.
+--> Importar o React do 'react'.
+--> Importar o { createStackNavigator } do '@react-navigation/native-stack'.
+
+----------------------------------------------------------------------------------------
