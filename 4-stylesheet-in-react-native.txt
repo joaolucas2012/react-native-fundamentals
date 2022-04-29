@@ -127,3 +127,26 @@ COMO FAZER O INPUT CONTINUAR COLORIDO DEPOIS DE PREENCHIDO:
 --> Depois, ir na tag do input e adicionar a propriedade "onChangeText={ handleInputChange }".
 
 ---------------------------------------------------------------------------------
+
+COMO FAZER O TECLADO SUMIR SE O USUÁRIO CLICAR FORA DO CAMPO DE INPUT:
+--> Basta importar o Keyboard e o TouchableWithoutFeedback da biblioteca "react-native".
+    import { Keyboard, TouchableWithoutFeedback, ...outras coisas necessárias } from "react-native";
+
+--> Depois é só envolver tudo que está dentro da <SafeAreaView> com a tag <TouchableWithoutFeedback></TouchableWithoutFeedback>.
+--> Daí, é só adicionar a propriedade onPress={Keyboard.dismiss} a essa tag.
+--> Pronto, toda vez que o usuário clicar fora do campo de input, o teclado vai sumir e o input vai estar como se não estivesse mais tocado.
+
+  return (
+        <SafeAreaView style={styles.container}>
+            <KeyboardAvoidingView 
+                style={styles.container}
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            >
+		<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+			...
+		</TouchableWithoutFeedback>
+	    </KeyboardAvoidingView>
+	</SafeAreaView>
+  )
+
+---------------------------------------------------------------------------------
