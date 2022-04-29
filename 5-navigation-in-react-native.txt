@@ -128,7 +128,7 @@ type Navigation = {
 
 const { navigate } = useNavigation<Navigation>();
 
---> Depois criar uma função que manipule a troca de tela para outra tela específica 
+--> Depois, criar uma função que manipule a troca de tela para outra tela específica.
 
 const handleStart = () => {
     navigate("UserIdentification");
