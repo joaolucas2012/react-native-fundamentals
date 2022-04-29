@@ -115,3 +115,36 @@ import Routes from "./src/routes";
 --> Depois disso, basta renderizar o <Routes /> no return da função do App.
 
 ----------------------------------------------------------------------------------------
+
+COMO IMPLEMENTAR AS ROTAS DE NAVEGAÇÃO NAS TELAS:
+--> Basta ir no arquivo de cada uma das páginas/telas criadas e importar o useNavigation da biblioteca "@react-navigation/core".
+import { useNavigation } from "@react-navigation/core";
+
+--> Depois, basta tipar o Navigation para a propriedade "navigate" não dar erro de tipagem pelo Typescript.
+
+type Navigation = {
+    navigate: (value: string) => void;
+}
+
+const { navigate } = useNavigation<Navigation>();
+
+--> Depois criar uma função que manipule a troca de tela para outra tela específica 
+
+const handleStart = () => {
+    navigate("UserIdentification");
+}
+
+--> Aqui, o navigate está orientado a fazer a mudança para a tela chamada "UserIdentification".
+--> Por fim, basta ir no botão renderizado pela página e adicionar a propriedade 'onPress={nomedafunçãohandler}'.
+
+<TouchableOpacity 
+          style={styles.button} 
+          activeOpacity={0.7}
+          onPress={handleStart}
+>
+	  Confirmar
+</TouchableOpacity>
+
+--> Assim, quando o botão for clicado, a função handler será chamada e o useNavigation irá usar o navigate para mudar a tela para a próxima tela escolhida.
+
+----------------------------------------------------------------------------------------
