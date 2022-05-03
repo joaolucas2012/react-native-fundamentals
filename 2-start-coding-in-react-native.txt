@@ -113,6 +113,16 @@ AJUSTAR ESTILO PRA NÃO ESCONDER ELEMENTOS ATRÁS DE DETALHES DO CELULAR:
 PARA IOS:
 --> É preciso importar o SafeAreaView da biblioteca 'react-native'.
 
+
+OUTRA ESTRATÉGIA PARA IPHONE:
+--> Importar a biblioteca react-native-iphone-x-helper.
+    COM NPM: npm install react-native-iphone-x-helper --save
+    COM YARN: yarn add react-native-iphone-x-helper --save
+--> Depois, basta ir no estilo do container e adicionar:
+    marginTop: getStatusBarHeight(),
+--> Isso faz com que a função 'getStatusBarHeight()' calcule a altura do detalhe na parte superior do iphone (também funcionou para o Android) e então posicione o container abaixo desse detalhe, com base na altura calculada.
+
+
 PARA ANDROID:
 --> Importar o Platform da biblioteca 'react-native'.
 --> No objeto styles, adicionar:
