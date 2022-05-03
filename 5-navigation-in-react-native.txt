@@ -72,7 +72,7 @@ export default AppRoutes;
 
 --> O const AppRoutes: React.FC = () => (); serve para tipar o AppRoutes como um functional component (FC).
 --> O stackRoutes.Navigator define a pilha de navegação das páginas.
---> O stackRoutes.Navigator possui a propriedade screenOptions= {{headerShow: false}} para esconder o cabeçalho com o nome da página na hora de chamar alguma página.
+--> O stackRoutes.Navigator possui a propriedade screenOptions= {{headerShown: false}} para esconder o cabeçalho com o nome da página na hora de chamar alguma página.
 --> A tag <stackRoutes.Screen/> tem as propriedades 'name' e 'component', que servem para identificar e mostrar as páginas de diferentes nomes que devem ser mostradas.
 --> A ordem em que essas stackRoutes aparecem é a ordem que as páginas devem ser mostradas de acordo como são empilhadas na stack. 
 --> Por isso, é preciso importar nesse arquivo também as páginas que serão usadas e renderizadas.
