@@ -1,0 +1,43 @@
+-------------------------------------------------------------------------------------------
+
+COMO USAR BOTÃO NO REACT NATIVE COM O REACT NATIVE GESTURE HANDLER:
+--> Basta ir no terminal e instalar o react-native-gesture-handler:
+    expo install react-native-gesture-handler
+
+--> Depois ir no componente e importar o ReactButton e o RectButtonProps da biblioteca do "react-native-gesture-handler".
+    import {
+       RectButton,
+       RectButtonProps
+    } from "react-native-gesture-handler";
+--> Ele serve para trazer um botão já preparado para a plataforma em que o app estiver sendo rodado, ou seja, ele vai se comportar com características específicas do Android, se estiver no Android, e o mesmo vale para o iOS.
+
+--> Após isso, é preciso criar um interface com o Typescript e estender ela com RectButtonProps.
+    interface NomeDoButton extends RectButtonProps{
+        title: string;
+        active?: boolean;
+    };
+
+--> O active?: boolean serve para receber false ou true, e com isso dá pra deixar o elemento em destaque ou não, caso eu queira. O ':?' significa que o valor não é obrigatório de ser passado como propriedade ao botão.
+
+--> Em seguida, basta criar a função do botão, que recebe como parâmetro as propriedades da interface criada, além do resto das propriedades presentes no RectButtonProps.
+--> Dentro do return, é pra renderizar um <RectButtonProps> que envolve um <Text>, que por sua vez envolve um {title}, que será recebido como parâmetro, como exigido na tipagem do Typescript.
+
+    export function NomeDoButton({
+        title,
+        active = false,
+        ...rest
+    } : NomeDoButton ){
+        return(
+            <RectButton 
+                style={styles.button}
+                {...rest}
+            >
+                <Text style={styles.text}>
+                    {title}
+                </Text>
+            </RectButton>
+        );
+    }
+
+--> Por fim, basta criar o estilo com o StyleSheet.
+-------------------------------------------------------------------------------------------
