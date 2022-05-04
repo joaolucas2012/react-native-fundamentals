@@ -1,0 +1,23 @@
+----------------------------------------------------------------------------------------------
+
+COMO CRIAR UMA LISTA DE ITENS COM FLAT LIST:
+--> Basta importar o FlatList da biblioteca "react-native".
+--> Ele é um elemento do React Native usado para renderizar listas de componentes parecidos na tela.
+--> Então, basta chamar a tag <FlatList/> e passar alguns parâmetros a ela para que ela renderize a lista com os itens.
+--> A lista renderizada é na vertical, para mudar para a horizontal, é preciso passar a propriedade 'horizontal' ao FlatList.
+--> Quando a lista é mostrada, ela também exibe uma barra de scroll indesejada ao passar o dedo, mas dá pra fazer ela sumir usando a propriedade 'showHorizontalScrollIndicator={false}'.
+--> Para estilizar a lista renderizada, é preciso usar a propriedade 'contentContainerStyle={styles.listStyle}'.
+--> Depois, ir no StyleSheet e definir o estilo para o listStyle.
+
+    <FlatList
+        data={[1,2,3,4,5]}
+        renderItem={( item ) => (
+            <Componente propriedadeDele={algumaCoisa} />
+        )}
+        horizontal
+        showHorizontalScrollIndicator={false}
+	contentContainerStyle={styles.listStyle}
+    />
+
+
+----------------------------------------------------------------------------------------------
