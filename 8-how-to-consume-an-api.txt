@@ -1,0 +1,61 @@
+--------------------------------------------------------------------------------------------
+
+COMO CONFIGURAR O SERVIDOR DA API:
+--> Basta ir dentro da pasta 'src' e criar uma pasta chamada 'services'.
+--> Dentro da pasta 'services', é pra colocar um arquivo 'server.json', que vem do backend.
+--> A api serve para que seus dados sejam consumidos e não se necessite de apis externas ou de internet.
+--> Então, tem que instalar o 'axios'.
+
+COM NPM:
+npm install axios
+
+COM YARN:
+yarn add axios
+
+
+COMO CRIAR CONFIGURAÇÃO PARA CONSUMIR UMA API:
+--> Ir na pasta 'services' recém criada e criar um arquivo chamado 'api.ts'.
+--> Dentro dele, importar o axios e depois criar a baseURL usando o endereço IP do computador.
+--> Para pegar o endereço IP, basta rodar no terminal:
+    ipconfig /all
+--> E depois pegar o endereço IP.
+--> Assim fica o código:
+
+    import axios from "axios";
+
+    const api = axios.create({
+        baseURL: "http://192.168.1.12:3333",
+    });
+
+    export default api;
+
+--> O template é 'baseURL:', depois "http://endereçoIp:numeroDaPorta".
+--> A porta 3333 geralmente é o padrão usado para apis.
+
+
+IMPORTAR O JSON SERVER:
+--> COM NPM: npm install -g json-server
+
+RODAR O JSON SERVER PASSANDO O HOST E A PORTA PARA ELE COMO FLAGS:
+json-server ./src/services/server.json --host 192.168.1.12 --port 3333
+
+--> Com isso, o servidor será iniciado, e será exibida a seguinte mensagem:
+
+\{^_^}/ hi!
+
+  Loading ./src/services/server.json
+  Done
+
+  Resources
+  http://200.235.92.75:3333/plants_water_frequencies
+  http://200.235.92.75:3333/plants_environments    
+  http://200.235.92.75:3333/plants
+
+  Home
+  http://200.235.92.75:3333
+
+  Type s + enter at any time to create a snapshot of the database
+
+--> O HOME é o endereço do servidor que contém todas as rotas da api.
+
+--------------------------------------------------------------------------------------------
