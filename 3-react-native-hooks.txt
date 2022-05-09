@@ -56,7 +56,7 @@ export function Button({ title } : ButtonProps){
 
 --------------------------------------------------------------------------------
 
-ESTADOS NO REACT-NATIVE:
+COMO USAR USESTATE NO REACT-NATIVE:
 --> É o mesmo que os estados no React Js, usando o hook useState.
 --> O useState retorna um vetor de dois valores, sendo que o primeiro valor é uma variável que representa e armazena o estado atual do componente, e o segundo valor é uma função que serve para atualizar o estado atual do componente.
 --> É a mesma sintaxe e notação do React Js.
@@ -70,6 +70,23 @@ COMO DEFINIR O TIPO DE VALOR QUE DEVE SER RECEBIDO POR UM STATE:
     const [name, setName] = useState<string>();
 --> Aqui, o Typescript entende que ele precisa ler no useState um valor que precisa ser uma string.
 --> No useFonts e em outros hooks que recebem valores padrão, não é necessário fazer essa tipagem.
+
+--------------------------------------------------------------------------------
+
+COMO USAR USEEFFECT NO REACT NATIVE:
+--> O useEffect é um hook do React que sempre é carregado antes da página ser exibida ao usuário. Dá pra usar ele para carregar o ambiente da api antes da página ser carregada.
+
+--> O useEffect recebe uma função como parâmetro, que é executada antes da página ser carregada e exibida ao usuário. Dá para passar uma função anônima a ele (arrow function) que retorna uma função assíncrona.
+--> Uma função assíncrona pode conter uma expressão await, que pausa a execução da função assíncrona e espera pela resolução da Promise passada, e depois retoma a execução da função assíncrona e retorna o valor resolvido.
+--> Uma promise é um objeto usado para processamento assíncrono. Um Promise (de "promessa") representa um valor que pode estar disponível agora, no futuro ou nunca.
+--> Dentro da função assíncrona pode ter um 'await' que aguarda a resolução da promise antes de retornar um valor.
+--> Dessa maneira, a função passada ao useEffect() será executada sempre que o componente for atualizado.
+
+--> O segundo parâmetro do useEffect é um array com as variáveis que controlarão esse hook. E se quisermos que a função seja executada apenas uma vez, que é quando o componente é inserido na tela, basta apenas passar um Array vazio.
+--> Exemplo:
+	useEffect(() => {
+		Produtos.buscar(produto);
+	}, [])
 
 --------------------------------------------------------------------------------
 
