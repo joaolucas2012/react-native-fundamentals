@@ -59,3 +59,38 @@ json-server ./src/services/server.json --host 192.168.1.12 --port 3333
 --> O HOME é o endereço do servidor que contém todas as rotas da api.
 
 --------------------------------------------------------------------------------------------
+
+COMO CONSUMIR A API COM O USESTATE E USEEFFECT:
+--> Basta criar uma interface com algum nome, que recebe as propriedades dos tipos que rota de dados da api possui.
+--> Exemplo:
+
+interface DataValues{
+	key: "string";
+	title: "string";
+}
+
+--> Depois, basta criar um useState que recebe um array de objetos tipados com Typescript. Esses objetos precisam ter as propriedades definidas pela rota com os dados da api.
+--> Exemplo:
+
+const [dataValues, setDataValues] = useState<DataValues[]>([]);
+
+
+--> Após isso, basta chamar o useEffect() e passar para ele um array vazio como controlador desse hook, daí o useEffect será executado apenas uma vez antes da página ser exibida ao usuário. 
+--> Como primeiro parâmetro do useEffect, é preciso passar uma função anônima (arrow function) que retorna um valor através de uma função assíncrona, que por sua vez, recebe um valor de uma requisição da api (uma promise).
+--> Para isso é preciso usar um await para aguardar e receber o valor da requisição da api. Assim que receber o valor, a função assíncrona deve usar um useState para setar o valor atual do state e criar um objeto com os valores retornados pela requisição da api.
+--> Por fim, deve-se chamar essa função anônima antes do fechamento do useEffect.
+--> Exemplo:
+
+useEffect(() => {
+	async function fecthData(){
+		const {data} = await api.get("nome_da_rota");
+		setData(data);
+	}
+	
+	fetchData();
+},[]);
+
+
+--> Por fim, é preciso apenas usar esses dados em algum ponto do código.
+
+--------------------------------------------------------------------------------------------

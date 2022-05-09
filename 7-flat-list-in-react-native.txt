@@ -21,3 +21,23 @@ COMO CRIAR UMA LISTA DE ITENS COM FLAT LIST:
 
 
 ----------------------------------------------------------------------------------------------
+
+COMO PASSAR UM OBJETO COM DADOS PARA UMA FLATLIST RENDERIZAR:
+--> Na propriedade 'data', basta colocar o nome do vetor do useState, que contenha os  objetos retornados pela requisição da api no useEffect.
+--> Na propriedade 'renderItem', é só passar uma arrow function que recebe o parâmetro '{item}', ou seja a desestruturação de cada objeto do vetor do useState.
+--> No retorno da arrow function, que é algum componente com alguma propriedade exigida, basta passar como propriedade o item.nomeDaPropriedade.
+--> Exemplo:
+
+< FlatList
+	data={dataValues}
+	renderItem={(item) => (
+		<Elemento 
+			propriedade={item.nomeDaPropriedade}
+		/>
+	)}
+	horizontal
+	showHorizontalScrollIndicator={false}
+	contentContainerStyle={styles.dataList}
+/>
+
+----------------------------------------------------------------------------------------------
