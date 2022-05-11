@@ -131,6 +131,9 @@ expo install expo-font @expo-google-fonts/nome-da-fonte
 --> O nome da fonte pode ser qualquer um que esteja no repositório de fontes do Expo Google Fonts.
 --> Para importar essa fonte para usar no código, basta ir no arquivo App.tsx e importar o hook chamado useFonts.
 
+--> Exemplo:
+expo install expo-font @expo-google-fonts/montserrat
+
 --------------------------------------------------------------------------------
 
 IMPORTANDO O USEFONTS:

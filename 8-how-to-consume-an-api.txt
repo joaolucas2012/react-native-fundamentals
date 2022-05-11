@@ -65,8 +65,8 @@ COMO CONSUMIR A API COM O USESTATE E USEEFFECT:
 --> Exemplo:
 
 interface DataValues{
-	key: "string";
-	title: "string";
+	key: string;
+	title: string;
 }
 
 --> Depois, basta criar um useState que recebe um array de objetos tipados com Typescript. Esses objetos precisam ter as propriedades definidas pela rota com os dados da api.
