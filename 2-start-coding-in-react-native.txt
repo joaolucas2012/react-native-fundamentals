@@ -68,7 +68,7 @@ RENDERIZAR NOVAS PÁGINAS NO REACT NATIVE:
 
 ----------------------------------------------------------------
 
-COMO RECONHECER IMAGENS NA HORA DA IMPORTAÇÃO E RENDERIZAÇÃO:
+COMO RECONHECER IMAGENS PNG NA HORA DA IMPORTAÇÃO E RENDERIZAÇÃO:
 --> Basta criar um arquivo na pasta raiz chamado 'custom.d.ts'.
 --> Ele serve para sobrescrever o nome de arquivos de imagem para que o react native reconheça essas imagens na hora de renderiza-las.
 --> Dentro desse arquivo, basta colocar:
@@ -92,6 +92,20 @@ COMO RECONHECER IMAGENS NA HORA DA IMPORTAÇÃO E RENDERIZAÇÃO:
         </View>
       );
     }
+
+----------------------------------------------------------------
+
+COMO TRABALHAR COM IMAGENS PNG NA HORA DA IMPORTAÇÃO E RENDERIZAÇÃO:
+--> Tem que importar o react-native-svg:
+    expo install react-native-svg
+--> Depois, no código onde será chamada a imagem, basta importar o SvgFromUri da biblioteca 'react-native-svg'.
+    import { SvgFromUri } from "react-native-svg";
+--> Após isso, ir dentro do return e renderizar a tag <SvgFromUri /> com as propriedades de uri, height e width.
+    <SvgFromUri 
+        uri={data.photo}
+        height={70}
+        width={70}
+    />
 
 ----------------------------------------------------------------
 
