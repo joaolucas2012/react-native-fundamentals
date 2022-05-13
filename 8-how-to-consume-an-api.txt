@@ -94,3 +94,19 @@ useEffect(() => {
 --> Por fim, é preciso apenas usar esses dados em algum ponto do código.
 
 --------------------------------------------------------------------------------------------
+
+COMO ORDENAR OS NOMES DOS ITENS DA API COM API.GET:
+--> Basta adicionar '?_sort=propriedadedaapi&_order=asc' na frente do nome da rota da api.
+--> O 'asc' no final significa 'ascendente', e o 'desc' significa 'descendente'.
+--> Exemplo:
+        async function fecthData(){
+		const {data} = await api.get("plants?_sort=name&_order=asc");
+		setData(data);
+	}
+	
+	fetchData();
+
+--> Para mais informações, consultar o site:
+https://github.com/typicode/json-server#sort
+
+--------------------------------------------------------------------------------------------
