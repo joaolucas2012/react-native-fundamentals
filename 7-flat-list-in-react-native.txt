@@ -15,7 +15,7 @@ COMO CRIAR UMA LISTA DE ITENS COM FLAT LIST:
             <Componente propriedadeDele={algumaCoisa} />
         )}
         horizontal
-        showHorizontalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
 	contentContainerStyle={styles.listStyle}
     />
 
@@ -30,7 +30,7 @@ COMO RENDERIZAR DUAS COLUNAS NO FLAT LIST:
             <Componente propriedadeDele={algumaCoisa} />
         )}
         horizontal
-        showHorizontalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
 	contentContainerStyle={styles.listStyle}
 	numColumns={2}
       />
@@ -51,7 +51,7 @@ COMO PASSAR UM OBJETO COM DADOS PARA UMA FLATLIST RENDERIZAR:
 		/>
 	)}
 	horizontal
-	showHorizontalScrollIndicator={false}
+	showsHorizontalScrollIndicator={false}
 	contentContainerStyle={styles.dataList}
 />
 
